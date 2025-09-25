@@ -1,8 +1,40 @@
 import { NavBar } from "../components/NavBar"
 import minhaFoto from '../assets/eu.jpg'
 import { RoundedImage } from "../components/RoundedImage"
+import itachi from '../assets/itachi.gif'
+import { useEffect, useState } from "react"
+import amor from '../assets/amor.png'
+import harry from '../assets/harry.png'
+import cat from '../assets/cat.png'
+import kunai from '../assets/kunai.png'
+import heart from '../assets/heart.png'
 
 export const Home = () => {
+    const [counterCarrossel, setCounterCarrossel] = useState(0);
+
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCounterCarrossel((prev) => (prev + 1) % 3);
+        }, 3200);
+
+        return () => clearInterval(interval)
+    }, [counterCarrossel])
+
+    const imageCarrossel = () => {
+        switch (counterCarrossel) {
+            case 0:
+                return itachi
+            case 1:
+                return amor
+            case 2:
+                return harry
+            default:
+                setCounterCarrossel(0)
+                return itachi
+        }
+    }
+
     return (
         <>
             <header className="fixed top-0 left-0 w-full z-10">
@@ -19,11 +51,40 @@ export const Home = () => {
                         <p>Criei esse espaço para compartilhar mais sobre mim e, quem sabe, trocar ideias e conhecer novas pessoas. </p>
                         <p>Fique à vontade!</p>
                     </div>
-                    <div className="pt-10 flex flex-col items-center justify-start gap-5">
+                    <div className="pt-10 flex flex-col items-center justify-start gap-10">
                         <RoundedImage src={minhaFoto} />
+                        <div className="flex flex-col items-center justify-center">
+                            <RoundedImage src={imageCarrossel()} />
+                            <div className="flex gap-2 mt-5">
+                                <img
+                                    src={kunai}
+                                    alt="kunai"
+                                    className={`rotate-180 transition-all duration-300 ease-in-out ${counterCarrossel === 0
+                                            ? 'opacity-100 animate-reverse-bounce w-10 h-10'
+                                            : 'opacity-50 w-8 h-8'
+                                        }`}
+                                />
 
-                        <RoundedImage src={minhaFoto} />
+                                <img
+                                    src={heart}
+                                    alt="heart"
+                                    className={`transition-all duration-300 ease-in-out ${counterCarrossel === 1
+                                            ? 'opacity-100 animate-bounce w-10 h-10'
+                                            : 'opacity-50 w-8 h-8'
+                                        }`}
+                                />
 
+                                <img
+                                    src={cat}
+                                    alt="cat"
+                                    className={`transition-all duration-300 ease-in-out ${counterCarrossel === 2
+                                            ? 'opacity-100 animate-bounce w-10 h-10'
+                                            : 'opacity-50 w-8 h-8'
+                                        }`}
+                                />
+
+                            </div>
+                        </div>
                     </div>
 
                 </div>
