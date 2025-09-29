@@ -45,7 +45,7 @@ export const NavBar = () => {
 
     return (
         <nav className="bg-background border-b-2 border-b-main-purple rounded-b-lg w-full h-16 flex items-center justify-between px-4 fixed top-0 z-20">
-            <div className="text-xl">
+            <div className="text-xl text-white">
                 <Typewriter
                     words={["Hello World!"]}
                     loop={true}
@@ -53,13 +53,14 @@ export const NavBar = () => {
                     typeSpeed={150} 
                     deleteSpeed={150}
                     delaySpeed={1000} 
+                    
                 />
             </div>
 
             <Menu
                 ref={buttonRef}
                 onClick={() => setIsOpenMenu(!isOpenMenu)}
-                className="cursor-pointer md:hidden"
+                className="cursor-pointer md:hidden text-white"
             />
 
             {isOpenMenu && (

@@ -54,18 +54,18 @@ export const Home = () => {
                 <NavBar />
             </header>
             <main className="flex flex-col items-center justify-start min-h-screen w-screen pt-28 pb-2 bg-background text- relative overflow-x-hidden">
-                <div className="flex justify-center w-full"><span className="text-4xl">Bem vindo!</span></div>
+                <div className="flex justify-center w-full"><span className="text-4xl text-white">Bem vindo!</span></div>
                 <div className="flex flex-col w-full px-4">
                     <div className="flex w-full justify-between items-center mt-10 gap-5 h-[700px]">
-                        <div className="flex flex-col items-start justify-start gap-8 text-sm text-wrap h-full flex-1">
+                        <div className="flex flex-col items-start justify-start gap-8 text-sm text-wrap h-full flex-1 text-white">
                             <TypedText paragraphs={
                                 [
-                                    { texts: [{ text: "Olá! Eu sou o", className: "white" }, { text: "Thiago", className: "text-main-purple text-xl font-bold" }] },
-                                    { texts: [{ text: "Por aqui, você vai conhecer um pouco mais sobre mim. Sou uma pessoa esforçada, honesta e de bem com a vida. Valorizo muito as relações sinceras, gosto de estar rodeado de boas energias e de gente que soma." }] },
-                                    { texts: [{ text: "No meu tempo livre, gosto de jogar, assistir animes e aproveitar momentos com a minha família — são esses pequenos detalhes que fazem a vida valer a pena, né?" }] },
-                                    { texts: [{ text: "Ah, e não posso esquecer do meu companheiro de quatro patas: Harry, um gatinho que adotei e que já virou parte da família." }] },
-                                    { texts: [{ text: "Criei esse espaço para compartilhar mais sobre mim e, quem sabe, trocar ideias e conhecer novas pessoas." }] },
-                                    { texts: [{ text: "Fique à vontade!" }] }
+                                    { texts: [{ text: "Olá! Eu sou o", className: "text-white" }, { text: "Thiago", className: "text-main-purple text-xl font-bold" }] },
+                                    { texts: [{ text: "Por aqui, você vai conhecer um pouco mais sobre mim. Sou uma pessoa esforçada, honesta e de bem com a vida. Valorizo muito as relações sinceras, gosto de estar rodeado de boas energias e de gente que soma.", className: "text-white" }] },
+                                    { texts: [{ text: "No meu tempo livre, gosto de jogar, assistir animes e aproveitar momentos com a minha família — são esses pequenos detalhes que fazem a vida valer a pena, né?", className: "text-white" }] },
+                                    { texts: [{ text: "Ah, e não posso esquecer do meu companheiro de quatro patas: Harry, um gatinho que adotei e que já virou parte da família.", className: "text-white" }] },
+                                    { texts: [{ text: "Criei esse espaço para compartilhar mais sobre mim e, quem sabe, trocar ideias e conhecer novas pessoas.", className: "text-white" }] },
+                                    { texts: [{ text: "Fique à vontade!", className: "text-white" }] }
                                 ]}
                                 speed={15}
                             />
@@ -93,11 +93,11 @@ export const Home = () => {
                     </div>
                 </div>
                 <div className="max-w-screen h-[400px] bg-[linear-gradient(to_bottom,#1D1D1D_0%,#34244E_54%,#1D1D1D_100%)] mt-20 flex flex-col justify-center items-center overflow-hidden gap-10">
-                    <span className="text-3xl">Competências</span>
+                    <span className="text-3xl text-white">Competências</span>
                     <CarouselCompetences />
                 </div>
                 <div className="w-full mt-20 flex flex-col items-center justify-center gap-5">
-                    <span className="text-3xl mb-5">Experiência Profissional</span>
+                    <span className="text-3xl mb-5 text-white">Experiência Profissional</span>
                     <Timeline />
                 </div>
                 {showFeedback && (
