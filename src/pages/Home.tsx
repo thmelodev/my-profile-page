@@ -8,11 +8,11 @@ import { CarouselCompetences } from "../components/CarouselCompetence"
 import { Timeline } from "../components/Timeline"
 // Assets
 import minhaFoto from '../assets/eu.jpg'
-import gmail from '../assets/gmail.png'
-import linkedin from '../assets/linkedin.png'
+import gmail from '../assets/gmail.webp'
+import linkedin from '../assets/linkedin.webp'
 import vite from '../assets/vite.svg'
-import react from '../assets/react.png'
-import tailwind from '../assets/tailwind.png'
+import react from '../assets/react.webp'
+import tailwind from '../assets/tailwind.webp'
 import { TypedText } from "../components/TypedText"
 
 export const Home = () => {

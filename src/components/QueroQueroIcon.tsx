@@ -1,4 +1,4 @@
-import queroQueroPath from '../assets/quero-quero.png';
+import queroQueroPath from '../assets/quero-quero.webp';
 
 export const QueroQueroIcon = () => {
     return (

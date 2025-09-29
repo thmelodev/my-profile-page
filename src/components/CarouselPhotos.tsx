@@ -1,9 +1,9 @@
 import itachi from '../assets/itachi.gif'
-import amor from '../assets/amor.png'
-import harry from '../assets/harry.png'
-import cat from '../assets/cat.png'
-import kunai from '../assets/kunai.png'
-import heart from '../assets/heart.png'
+import amor from '../assets/amor.webp'
+import harry from '../assets/harry.webp'
+import cat from '../assets/cat.webp'
+import kunai from '../assets/kunai.webp'
+import heart from '../assets/heart.webp'
 import { useEffect, useState } from "react";
 import { RoundedImage } from "./RoundedImage";
 import { CarouselIcon } from "./CarouselIcon";

@@ -1,4 +1,4 @@
-import queroquero from '../assets/quero-quero.png';
+import queroquero from '../assets/quero-quero.webp';
 
 export const Timeline = () => {
 

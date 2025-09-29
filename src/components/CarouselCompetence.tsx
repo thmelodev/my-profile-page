@@ -4,15 +4,15 @@ import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 // Assets
-import react from '../assets/react.png'
+import react from '../assets/react.webp'
 import nest from '../assets/nest.svg'
-import docker from '../assets/docker.png'
-import mongo from '../assets/mongo.png'
-import figma from '../assets/figma.png'
-import jenkins from '../assets/jenkins.png'
-import tailwind from '../assets/tailwind.png'
-import typescript from '../assets/typescript.png'
-import postgresql from '../assets/pg.png'
+import docker from '../assets/docker.webp'
+import mongo from '../assets/mongo.webp'
+import figma from '../assets/figma.webp'
+import jenkins from '../assets/jenkins.webp'
+import tailwind from '../assets/tailwind.webp'
+import typescript from '../assets/typescript.webp'
+import postgresql from '../assets/pg.webp'
 
 
 export const CarouselCompetences = () => {
