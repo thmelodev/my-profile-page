@@ -1,5 +1,6 @@
 import { Menu } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
+import { Typewriter } from "react-simple-typewriter";
 
 export const NavBar = () => {
     const [isOpenMenu, setIsOpenMenu] = useState(false);
@@ -44,8 +45,15 @@ export const NavBar = () => {
 
     return (
         <nav className="bg-background border-b-2 border-b-main-purple rounded-b-lg w-full h-16 flex items-center justify-between px-4 fixed top-0 z-20">
-            <div>
-                <span className="text-xl text-nowrap">Hello World!</span>
+            <div className="text-xl">
+                <Typewriter
+                    words={["Hello World!"]}
+                    loop={true}
+                    cursor={false} 
+                    typeSpeed={150} 
+                    deleteSpeed={150}
+                    delaySpeed={1000} 
+                />
             </div>
 
             <Menu
