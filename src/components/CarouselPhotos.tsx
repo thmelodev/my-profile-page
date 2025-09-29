@@ -35,7 +35,7 @@ export const CarouselPhotos = () => {
     }
 
     return (
-            <div className="flex flex-col items-center justify-center">
+            <div className="flex flex-col items-center justify-center min-h-[230px]">
                 <RoundedImage src={imageCarousel()} />
                 <div className="flex gap-2 mt-5">
                     <CarouselIcon src={kunai} alt="kunai" isActive={counterCarousel === 0} />

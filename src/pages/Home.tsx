@@ -9,6 +9,7 @@ import minhaFoto from '../assets/eu.jpg'
 import gmail from '../assets/gmail.png'
 import linkedin from '../assets/linkedin.png'
 import { CarouselCompetences } from "../components/CarouselCompetence"
+import { Timeline } from "../components/Timeline"
 
 export const Home = () => {
     const [showFeedback, setShowFeedback] = useState(false);
@@ -51,8 +52,8 @@ export const Home = () => {
             <main className="flex flex-col items-center justify-start min-h-screen min-w-screen max-w-screen py-28 bg-background text- relative overflow-x-hidden">
                 <div className="flex justify-center w-full"><span className="text-4xl">Bem vindo!</span></div>
                 <div className="flex flex-col w-screen max-w-screen px-4">
-                    <div className="flex w-full justify-between mt-10 gap-5">
-                        <div className="flex flex-col items-start justify-start gap-5 text-sm">
+                    <div className="flex w-full justify-between items-center mt-10 gap-5">
+                        <div className="flex flex-col items-stahrt justify-start gap-5 text-sm">
                             <span className="text-white">Olá! Eu sou o <span className="text-main-purple text-xl font-bold">Thiago</span></span>
                             <p>Por aqui, você vai conhecer um pouco mais sobre mim. Sou uma pessoa esforçada, honesta e de bem com a vida. Valorizo muito as relações sinceras, gosto de estar rodeado de boas energias e de gente que soma.</p>
                             <p>No meu tempo livre, gosto de jogar, assistir animes e aproveitar momentos com a minha família — são esses pequenos detalhes que fazem a vida valer a pena, né? </p>
@@ -60,7 +61,7 @@ export const Home = () => {
                             <p>Criei esse espaço para compartilhar mais sobre mim e, quem sabe, trocar ideias e conhecer novas pessoas. </p>
                             <p>Fique à vontade!</p>
                         </div>
-                        <div className="pt-10 flex flex-col items-center justify-start gap-10">
+                        <div className="flex flex-col items-center justify-start gap-10">
                             <RoundedImage src={minhaFoto} />
                             <CarouselPhotos />
                             <SocialMediaIcon
@@ -82,8 +83,13 @@ export const Home = () => {
                         </div>
                     </div>
                 </div>
-                <div className="max-w-screen h-[600px] bg-[linear-gradient(to_bottom,#1D1D1D_0%,#34244E_54%,#1D1D1D_100%)] mt-20 flex justify-center items-center overflow-hidden">
+                <div className="max-w-screen h-[400px] bg-[linear-gradient(to_bottom,#1D1D1D_0%,#34244E_54%,#1D1D1D_100%)] mt-20 flex flex-col justify-center items-center overflow-hidden gap-10">
+                    <span className="text-3xl">Competências</span>
                     <CarouselCompetences />
+                </div>
+                <div className="w-full mt-20 flex flex-col items-center justify-center gap-5">
+                    <span className="text-3xl mb-5">Experiência Profissional</span>
+                    <Timeline />
                 </div>
                 {showFeedback && (
                     <Feedback message="Email copiado" animationClass={feedbackAnimation} />

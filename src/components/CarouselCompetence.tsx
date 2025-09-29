@@ -1,4 +1,8 @@
 import { Competence } from './Competence'
+import { useEffect, useRef, useState } from 'react'
+import Slider from 'react-slick'
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
 // Assets
 import react from '../assets/react.png'
 import nest from '../assets/nest.svg'
@@ -8,27 +12,26 @@ import figma from '../assets/figma.png'
 import jenkins from '../assets/jenkins.png'
 import tailwind from '../assets/tailwind.png'
 import typescript from '../assets/typescript.png'
-import { useEffect, useRef, useState } from 'react'
-import Slider from 'react-slick'
-import 'slick-carousel/slick/slick.css'
-import 'slick-carousel/slick/slick-theme.css'
+import postgresql from '../assets/pg.png'
+
 
 export const CarouselCompetences = () => {
     const [currentSlide, setCurrentSlide] = useState(0)
     const sliderRef = useRef<Slider>(null)
 
     const items = [
-        { id: 1, name: "React JS", src: react },
-        { id: 2, name: "Nest JS", src: nest },
-        { id: 3, name: "Docker", src: docker },
-        { id: 4, name: "Mongo DB", src: mongo },
-        { id: 5, name: "Figma", src: figma },
-        { id: 6, name: "Jenkins", src: jenkins },
-        { id: 7, name: "Tailwind", src: tailwind },
-        { id: 8, name: "TypeScript", src: typescript },
+        { name: "React JS", src: react },
+        { name: "Nest JS", src: nest },
+        { name: "Docker", src: docker },
+        { name: "Mongo DB", src: mongo },
+        { name: "PostgreSQL", src: postgresql },
+        { name: "Figma", src: figma },
+        { name: "Jenkins", src: jenkins },
+        { name: "Tailwind", src: tailwind },
+        { name: "TypeScript", src: typescript },
     ]
 
-    const handleBeforeChange = (current: number, next: number) => {
+    const handleBeforeChange = (_: number, next: number) => {
         setCurrentSlide(next)
     }
 
@@ -57,7 +60,7 @@ export const CarouselCompetences = () => {
             {items.map((img, i) => (
                 <div
                     className={`flex flex-col items-center transition-all duration-500 mx-[1.5vw] `}
-                    key={img.id}
+                    key={i}
                 >
                     <Competence name={img.name} src={img.src} isActive={currentSlide === i} />
                     {currentSlide === i && (

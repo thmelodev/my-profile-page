@@ -43,7 +43,7 @@ export const NavBar = () => {
     }, [isOpenMenu]);
 
     return (
-        <nav className="bg-background border-b-2 border-b-main-purple rounded-b-lg w-full h-16 flex items-center justify-between px-4 relative">
+        <nav className="bg-background border-b-2 border-b-main-purple rounded-b-lg w-full h-16 flex items-center justify-between px-4 fixed top-0 z-20">
             <div>
                 <span className="text-xl text-nowrap">Hello World!</span>
             </div>
@@ -61,7 +61,7 @@ export const NavBar = () => {
                 >
                     <ul className="flex flex-col gap-4 text-lg">
                         <li>Sobre mim</li>
-                        <li>Habilidades</li>
+                        <li>Competências</li>
                         <li>Experiência Profissional</li>
                     </ul>
                 </div>
