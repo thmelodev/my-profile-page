@@ -18,7 +18,7 @@ export const Timeline = () => {
             </div>
             <div className='flex-col items-center justify-start z-0 my-8'>
                 <div className='h-0.5 w-full bg-background' />
-                <div className='flex flex-col gap-10 items-center justify-start bg-black-contrast border-t-4 border-t-main-purple p-4 rounded-t-lg w-80'>
+                <div className='flex flex-col gap-10 items-center justify-start bg-black-contrast border-t-4 border-t-main-purple p-4 rounded-lg w-80'>
                     <span>Desenvolvedor FullStack Jr</span>
                     <ul className="text-base text-start leading-relaxed list-disc list-outside hyphens-auto flex flex-col gap-4 pl-4">
                         <li>Trabalhei no desenvolvimento de projetos para o e-commerce da Quero-Quero, incluindo um integrador de preço com a VTEX em Golang.</li>
@@ -32,7 +32,7 @@ export const Timeline = () => {
             <div className="flex justify-center items-center gap-5">
                 <div className="flex flex-col items-center">
                     <span className='text-xs'>LOJAS QUERO-QUERO</span>
-                    <span className='text-xs'>OUT/23 - ATUAL</span>
+                    <span className='text-xs'>AGO/22 - OUT/23</span>
                 </div>
                 <div className='relative flex flex-col items-center z-0'>
                     <div className="rounded-full bg-main-purple p-3.5 w-20 h-20 flex justify-center items-center z-10">
@@ -41,7 +41,7 @@ export const Timeline = () => {
                 </div>
             </div>
             <div className='flex-col items-center justify-start my-8'>
-                <div className='flex flex-col gap-8 items-center justify-start bg-black-contrast border-t-4 border-t-main-purple p-4 rounded-t-lg w-80'>
+                <div className='flex flex-col gap-8 items-center justify-start bg-black-contrast border-t-4 border-t-main-purple p-4 rounded-lg w-80'>
                     <span>Estagiário de Desenvolvimento</span>
                     <ul className="text-base text-start leading-relaxed list-disc list-outside hyphens-auto flex flex-col gap-4 pl-4">
                         <li>Iniciei minha trajetória na área de tecnologia como estagiário de desenvolvimento de software nas Lojas Quero-Quero.</li>

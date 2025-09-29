@@ -50,7 +50,7 @@ export const CarouselCompetences = () => {
             if (sliderRef.current) {
                 sliderRef.current.slickNext()
             }
-        }, 2500);
+        }, 2000);
 
         return () => clearInterval(interval);
     }, [])
