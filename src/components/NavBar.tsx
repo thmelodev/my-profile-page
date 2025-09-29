@@ -7,6 +7,18 @@ export const NavBar = () => {
     const menuRef = useRef<HTMLDivElement>(null);
     const buttonRef = useRef<SVGSVGElement>(null);
 
+    const scrollToSection = (id: string) => {
+        const target = document.getElementById(id);
+        if (target) {
+            const offset = target.offsetTop - 80;
+            window.scrollTo({
+                top: offset,
+                behavior: "smooth",
+            });
+            setIsOpenMenu(false);
+        }
+    };
+
     useEffect(() => {
         const handleClickOutside = (event: PointerEvent) => {
             if (
@@ -69,9 +81,9 @@ export const NavBar = () => {
                     className="absolute top-20 right-4 bg-background border-2 border-main-purple rounded-lg p-4 z-50"
                 >
                     <ul className="flex flex-col gap-4 text-lg">
-                        <li>Sobre mim</li>
-                        <li>Competências</li>
-                        <li>Experiência Profissional</li>
+                        <li className="cursor-pointer" onClick={() => scrollToSection("sobre-mim")}>Sobre mim</li>
+                        <li className="cursor-pointer" onClick={() => scrollToSection("competencias")}>Competências</li>
+                        <li className="cursor-pointer" onClick={() => scrollToSection("experiencia-profissional")}>Experiência Profissional</li>
                     </ul>
                 </div>
             )}

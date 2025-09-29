@@ -55,7 +55,7 @@ export const Home = () => {
             </header>
             <main className="flex flex-col items-center justify-start min-h-screen w-screen pt-28 pb-2 bg-background text- relative overflow-x-hidden">
                 <div className="flex justify-center w-full"><span className="text-4xl text-white">Bem vindo!</span></div>
-                <div className="flex flex-col w-full px-4">
+                <div id="sobre-mim" className="flex flex-col w-full px-4">
                     <div className="flex w-full justify-between items-center mt-10 gap-5 h-[700px]">
                         <div className="flex flex-col items-start justify-start gap-8 text-sm text-wrap h-full flex-1 text-white">
                             <TypedText paragraphs={
@@ -92,11 +92,11 @@ export const Home = () => {
                         </div>
                     </div>
                 </div>
-                <div className="max-w-screen h-[400px] bg-[linear-gradient(to_bottom,#1D1D1D_0%,#34244E_54%,#1D1D1D_100%)] mt-20 flex flex-col justify-center items-center overflow-hidden gap-10">
+                <div id="competencias" className="max-w-screen h-[400px] bg-[linear-gradient(to_bottom,#1D1D1D_0%,#34244E_54%,#1D1D1D_100%)] mt-20 flex flex-col justify-center items-center overflow-hidden gap-10">
                     <span className="text-3xl text-white">Competências</span>
                     <CarouselCompetences />
                 </div>
-                <div className="w-full mt-20 flex flex-col items-center justify-center gap-5">
+                <div id="experiencia-profissional" className="w-full mt-20 flex flex-col items-center justify-center gap-5">
                     <span className="text-3xl mb-5 text-white">Experiência Profissional</span>
                     <Timeline />
                 </div>
