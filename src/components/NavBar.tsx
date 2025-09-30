@@ -80,7 +80,7 @@ export const NavBar = () => {
                     ref={menuRef}
                     className="absolute top-20 right-4 bg-background border-2 border-main-purple rounded-lg p-4 z-50"
                 >
-                    <ul className="flex flex-col gap-4 text-lg">
+                    <ul className="flex flex-col gap-4 text-lg text-white">
                         <li className="cursor-pointer" onClick={() => scrollToSection("sobre-mim")}>Sobre mim</li>
                         <li className="cursor-pointer" onClick={() => scrollToSection("competencias")}>Competências</li>
                         <li className="cursor-pointer" onClick={() => scrollToSection("experiencia-profissional")}>Experiência Profissional</li>

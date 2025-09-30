@@ -7,7 +7,7 @@ import { SocialMediaIcon } from "../components/SocialMediaIcon"
 import { CarouselCompetences } from "../components/CarouselCompetence"
 import { Timeline } from "../components/Timeline"
 // Assets
-import minhaFoto from '../assets/eu.jpg'
+import minhaFoto from '../assets/eu.webp'
 import gmail from '../assets/gmail.webp'
 import linkedin from '../assets/linkedin.webp'
 import vite from '../assets/vite.svg'
@@ -54,9 +54,9 @@ export const Home = () => {
                 <NavBar />
             </header>
             <main className="flex flex-col items-center justify-start min-h-screen w-screen pt-28 pb-2 bg-background text- relative overflow-x-hidden">
-                <div className="flex justify-center w-full"><span className="text-4xl text-white">Bem vindo!</span></div>
-                <div id="sobre-mim" className="flex flex-col w-full px-4">
-                    <div className="flex w-full justify-between items-center mt-10 gap-5 h-[700px]">
+                <div id="sobre-mim" className="flex justify-center w-full"><span className="text-4xl text-white">Bem vindo!</span></div>
+                <div className="flex flex-col w-full px-4">
+                    <div className="flex w-full justify-between items-center mt-10 gap-5 h-[750px] md:h-[500px]">
                         <div className="flex flex-col items-start justify-start gap-8 text-sm text-wrap h-full flex-1 text-white">
                             <TypedText paragraphs={
                                 [
@@ -67,10 +67,10 @@ export const Home = () => {
                                     { texts: [{ text: "Criei esse espaço para compartilhar mais sobre mim e, quem sabe, trocar ideias e conhecer novas pessoas.", className: "text-white" }] },
                                     { texts: [{ text: "Fique à vontade!", className: "text-white" }] }
                                 ]}
-                                speed={15}
+                                speed={7}
                             />
                         </div>
-                        <div className="flex flex-col items-center justify-evenly h-full">
+                        <div className="flex flex-col items-center justify-evenly md:justify-start md:pt-5 md:gap-10 xl:gap-5 h-full">
                             <RoundedImage src={minhaFoto} />
                             <CarouselPhotos />
                             <SocialMediaIcon
@@ -83,21 +83,40 @@ export const Home = () => {
                                     }
 
                                 }}
+                                className="md:hidden"
                             />
 
                             <SocialMediaIcon
                                 img={<img src={linkedin} alt="linkedin" className="w-8 h-8" />}
                                 link="https://www.linkedin.com/in/thmelodev/"
+                                className="md:hidden"
                             />
                         </div>
                     </div>
+                    <div className="hidden md:flex w-full justify-center gap-10">
+                        <SocialMediaIcon
+                            img={<img src={gmail} alt="gmail" className="w-8 h-6" />}
+                            link="mailto:thiagomelo0509@gmail.com"
+                            onClick={() => {
+                                if (!showFeedback) {
+                                    setShowFeedback(true);
+                                    navigator.clipboard.writeText("thiagomelo0509@gmail.com");
+                                }
+                            }}
+                        />
+
+                        <SocialMediaIcon
+                            img={<img src={linkedin} alt="linkedin" className="w-8 h-8" />}
+                            link="https://www.linkedin.com/in/thmelodev/"
+                        />
+                    </div>
                 </div>
-                <div id="competencias" className="max-w-screen h-[400px] bg-[linear-gradient(to_bottom,#1D1D1D_0%,#34244E_54%,#1D1D1D_100%)] mt-20 flex flex-col justify-center items-center overflow-hidden gap-10">
+                <div id="competencias" className="max-w-screen h-[400px] xl:h-[600px] bg-[linear-gradient(to_bottom,#1D1D1D_0%,#34244E_54%,#1D1D1D_100%)] mt-20 flex flex-col justify-center items-center overflow-hidden gap-10 xl:gap-20">
                     <span className="text-3xl text-white">Competências</span>
                     <CarouselCompetences />
                 </div>
                 <div id="experiencia-profissional" className="w-full mt-20 flex flex-col items-center justify-center gap-5">
-                    <span className="text-3xl mb-5 text-white">Experiência Profissional</span>
+                    <span className="text-3xl mb-5 xl:mb-28 2xl:mb-28 text-white">Experiência Profissional</span>
                     <Timeline />
                 </div>
                 {showFeedback && (
