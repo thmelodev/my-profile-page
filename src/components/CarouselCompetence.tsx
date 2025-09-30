@@ -1,4 +1,3 @@
-import { Competence } from './Competence'
 import { useEffect, useRef, useState } from 'react'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
@@ -72,4 +71,20 @@ export const CarouselCompetences = () => {
             ))}
         </Slider>
     )
+}
+
+
+interface CompetenceProps {
+    name: string;
+    src: string;
+    isActive: boolean;
+}
+
+const Competence = ({ name, src, isActive }: CompetenceProps) => {
+    return (
+        <div className={`flex items-center justify-center bg-background rounded-3xl w-28 h-28 ${isActive ? 'opacity-100' : 'opacity-30 scale-75'}`}>
+            <img src={src} alt={name} className={`w-auto h-auto max-h-3/5 max-w-3/5`} />
+        </div>
+    )
+
 }
