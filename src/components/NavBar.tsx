@@ -56,7 +56,7 @@ export const NavBar = () => {
     }, [isOpenMenu]);
 
     return (
-        <nav className="bg-background border-b-2 border-b-main-purple rounded-b-lg w-full h-16 flex items-center justify-between px-4 fixed top-0 z-20">
+        <nav className="bg-background border-b-2 xl:border-b-4 border-b-main-purple rounded-b-lg w-full h-16 flex items-center justify-between px-4 fixed top-0 z-20">
             <div className="text-xl text-white">
                 <Typewriter
                     words={["Hello World!"]}
@@ -67,6 +67,13 @@ export const NavBar = () => {
                     delaySpeed={1000} 
                     
                 />
+            </div>
+            <div className="hidden md:flex gap-8 text-lg text-white">
+                <ul className="flex gap-8">
+                    <li className="cursor-pointer" onClick={() => scrollToSection("sobre-mim")}>Sobre mim</li>
+                    <li className="cursor-pointer" onClick={() => scrollToSection("competencias")}>Competências</li>
+                    <li className="cursor-pointer" onClick={() => scrollToSection("experiencia-profissional")}>Experiência Profissional</li>
+                </ul>
             </div>
 
             <Menu

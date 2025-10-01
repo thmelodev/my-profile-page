@@ -53,10 +53,10 @@ export const Home = () => {
             <header className="fixed top-0 left-0 w-screen z-10 ">
                 <NavBar />
             </header>
-            <main className="flex flex-col items-center justify-start min-h-screen w-screen pt-28 pb-2 bg-background text- relative overflow-x-hidden">
+            <main className="flex flex-col items-center justify-center min-h-screen min-w-screen max-w-screen pt-28 pb-2 bg-background relative overflow-x-hidden">
                 <div id="sobre-mim" className="flex justify-center w-full"><span className="text-4xl text-white">Bem vindo!</span></div>
                 <div className="flex flex-col w-full px-4">
-                    <div className="flex w-full justify-between items-center mt-10 gap-5 h-[750px] md:h-[500px]">
+                    <div className="flex w-full justify-between items-center mt-10 gap-5 h-[750px] md:h-[500px] xl:h-[450px] xl:px-28">
                         <div className="flex flex-col items-start justify-start gap-8 text-sm text-wrap h-full flex-1 text-white">
                             <TypedText paragraphs={
                                 [
@@ -111,7 +111,7 @@ export const Home = () => {
                         />
                     </div>
                 </div>
-                <div id="competencias" className="max-w-screen h-[400px] xl:h-[600px] bg-[linear-gradient(to_bottom,#1D1D1D_0%,#34244E_54%,#1D1D1D_100%)] mt-20 flex flex-col justify-center items-center overflow-hidden gap-10 xl:gap-20">
+                <div id="competencias" className="w-screen overflow-hidden h-[400px] xl:h-[600px] bg-[linear-gradient(to_bottom,#1D1D1D_0%,#34244E_54%,#1D1D1D_100%)] mt-10 flex flex-col justify-center items-center gap-10 xl:gap-20">
                     <span className="text-3xl text-white">Competências</span>
                     <CarouselCompetences />
                 </div>
@@ -123,12 +123,12 @@ export const Home = () => {
                     <Feedback message="Email copiado" animationClass={feedbackAnimation} />
                 )}
             </main>
-            <footer className="w-screen flex items-center justify-between p-4 border-t-2 border-main-purple">
-                <span className="text-xs">2025 © Thiago Melo de Assis Pereira</span>
+            <footer className="w-screen flex items-center justify-between p-4 border-t-2 xl:border-t-4 border-main-purple">
+                <span className="text-xs xl:text-sm">2025 © Thiago Melo de Assis Pereira</span>
                 <div className="flex gap-4 items-center">
-                    <img src={vite} alt="Vite" className="w-auto h-5" />
-                    <img src={react} alt="React" className="w-auto h-5" />
-                    <img src={tailwind} alt="Tailwind CSS" className="w-auto h-5" />
+                    <img src={vite} alt="Vite" className="w-auto h-5 xl:h-7" />
+                    <img src={react} alt="React" className="w-auto h-5 xl:h-7" />
+                    <img src={tailwind} alt="Tailwind CSS" className="w-auto h-5 xl:h-7" />
                 </div>
             </footer>
         </>

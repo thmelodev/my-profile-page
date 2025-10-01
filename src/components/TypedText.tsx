@@ -53,7 +53,7 @@ export const TypedText = ({ paragraphs, speed = 30 }: TypedTextProps) => {
 
 
     return (
-        <div className="flex flex-col gap-8">
+        <div className="flex flex-col gap-8 xl:max-w-[800px] 2xl:max-w-[1200px]">
             {displayedParagraphs.map((paragraph, pIndex) => {
                 return (
                     <div key={pIndex} className="flex items-center gap-2">
