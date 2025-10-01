@@ -70,9 +70,9 @@ export const NavBar = () => {
             </div>
             <div className="hidden md:flex gap-8 text-lg text-white">
                 <ul className="flex gap-8">
-                    <li className="cursor-pointer" onClick={() => scrollToSection("sobre-mim")}>Sobre mim</li>
-                    <li className="cursor-pointer" onClick={() => scrollToSection("competencias")}>Competências</li>
-                    <li className="cursor-pointer" onClick={() => scrollToSection("experiencia-profissional")}>Experiência Profissional</li>
+                    <li className="cursor-pointer hover:text-main-purple" onClick={() => scrollToSection("sobre-mim")}>Sobre mim</li>
+                    <li className="cursor-pointer hover:text-main-purple" onClick={() => scrollToSection("competencias")}>Competências</li>
+                    <li className="cursor-pointer hover:text-main-purple" onClick={() => scrollToSection("experiencia-profissional")}>Experiência Profissional</li>
                 </ul>
             </div>
 

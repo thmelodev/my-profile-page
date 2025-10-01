@@ -103,7 +103,7 @@ interface CompetenceProps {
 
 const Competence = ({ name, src, isActive }: CompetenceProps) => {
     return (
-        <div className={`flex items-center justify-center bg-background rounded-3xl ${isActive ? 'opacity-100 w-28 h-28 ' : 'opacity-30 w-20 h-20'}`}>
+        <div className={`flex items-center justify-center bg-background rounded-3xl cursor-pointer ${isActive ? 'opacity-100 w-28 h-28 ' : 'opacity-30 w-20 h-20'}`}>
             <img src={src} alt={name} className={`w-auto h-auto max-h-3/5 max-w-3/5`} />
         </div>
     )
