@@ -56,7 +56,7 @@ export const Home = () => {
             <main className="flex flex-col items-center justify-center min-h-screen min-w-screen max-w-screen pt-28 pb-2 bg-background relative overflow-x-hidden">
                 <div id="sobre-mim" className="flex justify-center w-full"><span className="text-4xl text-white">Bem vindo!</span></div>
                 <div className="flex flex-col w-full px-4">
-                    <div className="flex w-full justify-between items-center mt-10 gap-5 h-[750px] md:h-[500px] xl:h-[450px] xl:px-28">
+                    <div className="flex w-full justify-between items-center mt-10 gap-5 h-[750px] md:h-[500px] xl:h-[450px] md:px-10 xl:px-28">
                         <div className="flex flex-col items-start justify-start gap-8 text-sm text-wrap h-full flex-1 text-white">
                             <TypedText paragraphs={
                                 [
