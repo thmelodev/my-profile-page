@@ -56,19 +56,21 @@ export const Home = () => {
             <main className="flex flex-col items-center justify-center min-h-screen min-w-screen max-w-screen pt-28 pb-2 bg-background relative overflow-x-hidden">
                 <div id="sobre-mim" className="flex justify-center w-full"><span className="text-4xl text-white">Bem vindo!</span></div>
                 <div className="flex flex-col w-full px-4">
-                    <div className="flex w-full justify-between items-center mt-10 gap-5 h-[750px] md:h-[500px] xl:h-[450px] md:px-10 xl:px-28">
+                    <div className="flex w-full justify-between items-center mt-10 gap-5 h-[900px] md:h-[700px] xl:h-[600px] md:px-10 xl:px-28">
                         <div className="flex flex-col items-start justify-start gap-8 text-sm text-wrap h-full flex-1 text-white">
-                            <TypedText paragraphs={
-                                [
+                            <TypedText
+                                paragraphs={[
                                     { texts: [{ text: "Olá! Eu sou o", className: "text-white" }, { text: "Thiago", className: "text-main-purple text-xl font-bold" }] },
-                                    { texts: [{ text: "Por aqui, você vai conhecer um pouco mais sobre mim. Sou uma pessoa esforçada, honesta e de bem com a vida. Valorizo muito as relações sinceras, gosto de estar rodeado de boas energias e de gente que soma.", className: "text-white" }] },
+                                    { texts: [{ text: "Por aqui, você vai conhecer um pouco mais sobre mim. Sou um cara esforçado, honesto, cristão e de bem com a vida. Valorizo muito as relações sinceras, gosto de estar rodeado de boas energias e de gente que soma.", className: "text-white" }] },
+                                    { texts: [{ text: "Sou Desenvolvedor de Software há 3 anos, apaixonado por tecnologia e sempre em busca de evolução — meu objetivo é crescer continuamente e entregar valor em cada projeto que faço parte.", className: "text-white" }] },
                                     { texts: [{ text: "No meu tempo livre, gosto de jogar, assistir animes e aproveitar momentos com a minha família — são esses pequenos detalhes que fazem a vida valer a pena, né?", className: "text-white" }] },
                                     { texts: [{ text: "Ah, e não posso esquecer do meu companheiro de quatro patas: Harry, um gatinho que adotei e que já virou parte da família.", className: "text-white" }] },
                                     { texts: [{ text: "Criei esse espaço para compartilhar mais sobre mim e, quem sabe, trocar ideias e conhecer novas pessoas.", className: "text-white" }] },
                                     { texts: [{ text: "Fique à vontade!", className: "text-white" }] }
                                 ]}
-                                speed={7}
+                                speed={4}
                             />
+
                         </div>
                         <div className="flex flex-col items-center justify-evenly md:justify-start md:pt-5 md:gap-10 xl:gap-5 h-full">
                             <RoundedImage src={minhaFoto} />
