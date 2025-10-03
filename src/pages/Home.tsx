@@ -4,7 +4,7 @@ import { Feedback } from "../components/Feedback"
 import { NavBar } from "../components/NavBar"
 import { RoundedImage } from "../components/RoundedImage"
 import { SocialMediaIcon } from "../components/SocialMediaIcon"
-import { CarouselCompetences } from "../components/CarouselCompetence"
+// import { CarouselCompetences } from "../components/CarouselCompetence"
 import { Timeline } from "../components/Timeline"
 import { TypedText } from "../components/TypedText"
 // Assets
@@ -16,6 +16,7 @@ import react from '../assets/react.webp'
 import tailwind from '../assets/tailwind.webp'
 import github from '../assets/github.webp'
 import { Button } from "../components/Button"
+import { CarouselCompetences } from "../components/CarouselCompetence"
 
 export const Home = () => {
     const [showFeedback, setShowFeedback] = useState(false);
