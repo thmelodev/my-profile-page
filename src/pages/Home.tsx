@@ -6,6 +6,7 @@ import { RoundedImage } from "../components/RoundedImage"
 import { SocialMediaIcon } from "../components/SocialMediaIcon"
 import { CarouselCompetences } from "../components/CarouselCompetence"
 import { Timeline } from "../components/Timeline"
+import { TypedText } from "../components/TypedText"
 // Assets
 import minhaFoto from '../assets/eu.webp'
 import gmail from '../assets/gmail.webp'
@@ -13,7 +14,8 @@ import linkedin from '../assets/linkedin.webp'
 import vite from '../assets/vite.svg'
 import react from '../assets/react.webp'
 import tailwind from '../assets/tailwind.webp'
-import { TypedText } from "../components/TypedText"
+import github from '../assets/github.webp'
+import { Button } from "../components/Button"
 
 export const Home = () => {
     const [showFeedback, setShowFeedback] = useState(false);
@@ -53,10 +55,10 @@ export const Home = () => {
             <header className="fixed top-0 left-0 w-screen z-10 ">
                 <NavBar />
             </header>
-            <main className="flex flex-col items-center justify-center min-h-screen min-w-screen max-w-screen pt-28 pb-2 bg-background relative overflow-x-hidden">
+            <main className="flex flex-col items-center justify-center min-h-screen min-w-screen max-w-[1200px] pt-28 pb-2 bg-background relative overflow-x-hidden">
                 <div id="sobre-mim" className="flex justify-center w-full"><span className="text-4xl text-white">Bem vindo!</span></div>
-                <div className="flex flex-col w-full px-4">
-                    <div className="flex w-full justify-between items-center mt-10 gap-5 h-[900px] md:h-[700px] xl:h-[600px] md:px-10 xl:px-28">
+                <div className="flex flex-col w-full px-4 xl:w-[1200px] xl:px-0">
+                    <div className="flex w-full justify-between items-center mt-10 gap-5 h-[1000px] md:h-[600px] xl:h-[500px] md:px-10 xl:px-0">
                         <div className="flex flex-col items-start justify-start gap-8 text-sm text-wrap h-full flex-1 text-white">
                             <TypedText
                                 paragraphs={[
@@ -70,11 +72,16 @@ export const Home = () => {
                                 ]}
                                 speed={4}
                             />
-
                         </div>
                         <div className="flex flex-col items-center justify-evenly md:justify-start md:pt-5 md:gap-10 xl:gap-5 h-full">
                             <RoundedImage src={minhaFoto} />
                             <CarouselPhotos />
+                            <a href="/docs/cv.pdf" download="Thiago_Melo_CV.pdf">
+                                <Button
+                                    label="Baixar CV"
+                                    className="md:hidden"
+                                />
+                            </a>
                             <SocialMediaIcon
                                 img={<img src={gmail} alt="gmail" className="w-8 h-6" />}
                                 link="mailto:thiagomelo0509@gmail.com"
@@ -93,24 +100,41 @@ export const Home = () => {
                                 link="https://www.linkedin.com/in/thmelodev/"
                                 className="md:hidden"
                             />
+                            <SocialMediaIcon
+                                img={<img src={github} alt="github" className="w-10 h-10" />}
+                                link="https://github.com/thmelodev"
+                                className="md:hidden"
+                            />
                         </div>
                     </div>
-                    <div className="hidden md:flex w-full justify-center gap-10">
-                        <SocialMediaIcon
-                            img={<img src={gmail} alt="gmail" className="w-8 h-6" />}
-                            link="mailto:thiagomelo0509@gmail.com"
-                            onClick={() => {
-                                if (!showFeedback) {
-                                    setShowFeedback(true);
-                                    navigator.clipboard.writeText("thiagomelo0509@gmail.com");
-                                }
-                            }}
-                        />
+                    <div className="hidden md:flex justify-between items-center w-full md:px-10 xl:px-0">
+                        <a href="/docs/Thiago_Melo_CV.pdf" download="Thiago_Melo_CV.pdf">
+                            <Button
+                                label="Baixar CV"
+                            />
+                        </a>
+                        <div className="flex justify-center gap-10">
+                            <SocialMediaIcon
+                                img={<img src={gmail} alt="gmail" className="w-8 h-6" />}
+                                link="mailto:thiagomelo0509@gmail.com"
+                                onClick={() => {
+                                    if (!showFeedback) {
+                                        setShowFeedback(true);
+                                        navigator.clipboard.writeText("thiagomelo0509@gmail.com");
+                                    }
+                                }}
+                            />
 
-                        <SocialMediaIcon
-                            img={<img src={linkedin} alt="linkedin" className="w-8 h-8" />}
-                            link="https://www.linkedin.com/in/thmelodev/"
-                        />
+                            <SocialMediaIcon
+                                img={<img src={linkedin} alt="linkedin" className="w-8 h-8" />}
+                                link="https://www.linkedin.com/in/thmelodev/"
+                            />
+
+                            <SocialMediaIcon
+                                img={<img src={github} alt="github" className="w-10 h-10" />}
+                                link="https://github.com/thmelodev"
+                            />
+                        </div>
                     </div>
                 </div>
                 <div id="competencias" className="w-screen overflow-hidden h-[400px] xl:h-[600px] bg-[linear-gradient(to_bottom,#1D1D1D_0%,#34244E_54%,#1D1D1D_100%)] mt-10 flex flex-col justify-center items-center gap-10 xl:gap-20">

@@ -1,4 +1,4 @@
-import itachi from '../assets/itachi.gif'
+import itachi from '../assets/itachi.webp'
 import amor from '../assets/amor.webp'
 import harry from '../assets/harry.webp'
 import cat from '../assets/cat.webp'
