@@ -23,7 +23,7 @@ export const RoundedImage = ({ src }: { src: string }) => {
   return (
     <div className="relative w-36 h-36 perspective">
       <div
-        className={`relative w-full h-full rounded-full transition-transform duration-400 ease-[cubic-bezier(0.45,0,0.2,1)] transform-style-preserve-3d ${
+        className={`relative w-full h-full border-2 border-white rounded-full transition-transform duration-400 ease-[cubic-bezier(0.45,0,0.2,1)] transform-style-preserve-3d ${
           flipping ? 'rotate-y-90' : 'rotate-y-0'
         }`}
       >
