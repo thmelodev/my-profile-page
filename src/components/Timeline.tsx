@@ -12,9 +12,9 @@ export const Timeline = () => {
                     isFirst={true}
                 />
                 <DescriptionJob
-                    title="Desenvolvedor FullStack Jr"
+                    title="Desenvolvedor de Software"
                     responsabilities={[
-                        "Atuo como Desenvolvedor FullStack Jr nas Lojas Quero-Quero, onde participei do desenvolvimento de projetos para o e-commerce, incluindo um integrador de preço com a VTEX em Golang.",
+                        "Atuo como Desenvolvedor de Software nas Lojas Quero-Quero, onde participei do desenvolvimento de projetos para o e-commerce, incluindo um integrador de preço com a VTEX em Golang.",
                         "Participei da migração da plataforma Wevo para sistemas próprios da empresa, contribuindo em diversos projetos relevantes.",
                         "Além disso, trabalho na sustentação, focando na análise profunda de sistemas, correção de bugs e resolução de problemas em contato com a área de negócio."
 
@@ -23,9 +23,9 @@ export const Timeline = () => {
                 />
             </div>
             <DescriptionJob
-                title="Desenvolvedor FullStack Jr"
+                title="Desenvolvedor de Software"
                 responsabilities={[
-                    "Atuo como Desenvolvedor FullStack Jr nas Lojas Quero-Quero, onde participei do desenvolvimento de projetos para o e-commerce, incluindo um integrador de preço com a VTEX em Golang.",
+                    "Atuo como Desenvolvedor de Software nas Lojas Quero-Quero, onde participei do desenvolvimento de projetos para o e-commerce, incluindo um integrador de preço com a VTEX em Golang.",
                     "Participei da migração da plataforma Wevo para sistemas próprios da empresa, contribuindo em diversos projetos relevantes.",
                     "Além disso, trabalho na sustentação, focando na análise profunda de sistemas, correção de bugs e resolução de problemas em contato com a área de negócio."
 
