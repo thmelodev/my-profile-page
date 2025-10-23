@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react"
 import { CarouselPhotos } from "../components/CarouselPhotos"
-import { Feedback } from "../components/Feedback"
 import { NavBar } from "../components/NavBar"
 import { RoundedImage } from "../components/RoundedImage"
 import { SocialMediaIcon } from "../components/SocialMediaIcon"
-// import { CarouselCompetences } from "../components/CarouselCompetence"
+import { Button } from "../components/Button"
+import { CarouselCompetences } from "../components/CarouselCompetence"
 import { Timeline } from "../components/Timeline"
+import { Feedback } from "../components/Feedback"
+
 import { TypedText } from "../components/TypedText"
 // Assets
 import minhaFoto from '../assets/eu.webp'
@@ -15,8 +17,6 @@ import vite from '../assets/vite.svg'
 import react from '../assets/react.webp'
 import tailwind from '../assets/tailwind.webp'
 import github from '../assets/github.webp'
-import { Button } from "../components/Button"
-import { CarouselCompetences } from "../components/CarouselCompetence"
 
 export const Home = () => {
     const [showFeedback, setShowFeedback] = useState(false);

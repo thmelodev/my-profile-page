@@ -1,4 +1,6 @@
-import queroquero from '../assets/quero-quero.webp';
+import queroquero from '../../assets/quero-quero.webp';
+import DescriptionJob from './DescriptionJob';
+import Job from './Job';
 
 export const Timeline = () => {
 
@@ -64,37 +66,7 @@ export const Timeline = () => {
     );
 };
 
-const Job = ({ company, date, img, isFirst }: { company: string, date: string, img: string, isFirst: boolean }) => {
-    return (
-        <>
-            <div className="flex flex-col items-center md:pt-7 lg:pt-10">
-                <span className='text-xs text-white'>{company}</span>
-                <span className='text-xs text-white'>{date}</span>
-            </div>
-            <div className='relative flex flex-col items-center z-0'>
-                <div className="rounded-full bg-main-purple p-3.5 lg:p-4.5 w-20 h-20 lg:w-28 lg:h-28 flex justify-center items-center z-20 border-2 border-white">
-                    <img src={img} alt="Quero-Quero" />
-                </div>
-                <div className={`w-2 h-[300px] ${isFirst ? 'lg:h-[600px]' : 'lg:hidden'} bg-white rounded-t-full rounded-b-full absolute top-0 z-10`} />
-            </div>
-        </>
-    )
-}
 
-const DescriptionJob = ({ title, responsabilities, className }: { title: string, responsabilities: string[], className?: string }) => {
-    return (
-        <div className={`flex-col items-center justify-start z-0 my-8 lg:mt-0 lg:ml-10 ${className}`}>
-            <div className='h-0.5 w-full bg-background lg:hidden' />
-            <div className='flex flex-col gap-8 items-center justify-start bg-black-contrast border-t-4 lg:border-t-8 border-t-main-purple p-4 lg:p-8 rounded-lg lg:rounded-lg w-[350px] lg:w-[600px]'>
-                <span className='text-white font-semibold text-xl text-nowrap'>{title}</span>
-                <ul className="text-base text-start text-white leading-relaxed list-disc list-outside hyphens-auto flex flex-col gap-4 pl-4">
-                    {responsabilities.map((item, index) => (
-                        <li key={index}>{item}</li>
-                    ))}
-                </ul>
-            </div>
-            <div className='h-0.5 w-full bg-background lg:hidden' />
-        </div>
-    )
-}
+
+
 

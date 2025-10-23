@@ -3,15 +3,16 @@ import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 
 // Assets
-import docker from '../assets/docker.webp';
-import figma from '../assets/figma.webp';
-import jenkins from '../assets/jenkins.webp';
-import mongo from '../assets/mongo.webp';
-import nest from '../assets/nest.svg';
-import postgresql from '../assets/pg.webp';
-import react from '../assets/react.webp';
-import tailwind from '../assets/tailwind.webp';
-import typescript from '../assets/typescript.webp';
+import docker from '../../assets/docker.webp';
+import figma from '../../assets/figma.webp';
+import jenkins from '../../assets/jenkins.webp';
+import mongo from '../../assets/mongo.webp';
+import nest from '../../assets/nest.svg';
+import postgresql from '../../assets/pg.webp';
+import react from '../../assets/react.webp';
+import tailwind from '../../assets/tailwind.webp';
+import typescript from '../../assets/typescript.webp';
+import Competence from './Competence';
 
 const items = [
   { name: 'React JS', src: react },
@@ -91,20 +92,3 @@ export const CarouselCompetences = () => {
   );
 };
 
-interface CompetenceProps {
-  name: string;
-  src: string;
-  isActive: boolean;
-}
-
-const Competence = ({ name, src, isActive }: CompetenceProps) => {
-  return (
-    <div
-      className={`flex items-center justify-center bg-background rounded-3xl cursor-pointer transition-all duration-500 ${
-        isActive ? 'opacity-100 w-28 h-28' : 'opacity-30 w-20 h-20'
-      }`}
-    >
-      <img src={src} alt={name} className="w-auto h-auto max-h-[60%] max-w-[60%]" />
-    </div>
-  );
-};
