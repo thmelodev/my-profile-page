@@ -1,73 +1,34 @@
-# React + TypeScript + Vite
+# Thiago Melo · Portfólio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Página pessoal de Thiago Melo, desenvolvedor de software. Reúne experiência, stack, projetos e contato.
 
-Currently, two official plugins are available:
+## Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React 19 + TypeScript, com Vite
+- Tailwind CSS v4 (tokens de cor e animações em `src/index.css`)
+- Fonte Bricolage Grotesque auto-hospedada via `@fontsource-variable`
+- Ícones `lucide-react`
 
-## React Compiler
+As animações são feitas só com CSS e `IntersectionObserver`, sem biblioteca. Quem ativa "reduzir movimento" no sistema vê tudo já no estado final.
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+## Rodando
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+npm run dev      # http://localhost:5173
+npm run build    # gera dist/
+npm run lint
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Onde editar o conteúdo
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Todo o texto fica em [`src/data/profile.ts`](src/data/profile.ts): dados de contato, cargos, formação, idiomas, stack e projetos. Os componentes só leem esse arquivo.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- **Selo "Aberto a novas oportunidades":** `profile.openToWork`.
+- **Novo projeto:** acrescente um item em `projects`, com um print 16:10 da página inicial em `src/assets/projects/`.
+- **CV:** o PDF servido pelo botão "Baixar CV" é `public/docs/Thiago_Melo_CV.pdf`. Ele é gerado a partir de [`cv/Thiago_Melo_CV.html`](cv/Thiago_Melo_CV.html): edite o HTML e rode o comando abaixo (Windows, com o Edge instalado).
+
+```powershell
+& "${env:ProgramFiles(x86)}\Microsoft\Edge\Application\msedge.exe" --headless=new --disable-gpu --no-pdf-header-footer `
+  "--print-to-pdf=$PWD\public\docs\Thiago_Melo_CV.pdf" "file:///$PWD/cv/Thiago_Melo_CV.html"
 ```

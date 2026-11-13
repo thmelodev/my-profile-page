@@ -1,41 +1,31 @@
-import itachi from '../assets/itachi.webp'
 import amor from '../assets/amor.webp'
 import harry from '../assets/harry.webp'
-import { useEffect, useState } from "react";
-import { RoundedImage } from "./RoundedImage";
+import itachi from '../assets/itachi.webp'
+import { useEffect, useState } from 'react'
+import { useReducedMotion } from '../hooks/useReducedMotion'
 import CarouselIcons from './CarouselIcons'
+import { RoundedImage } from './RoundedImage'
 
+const photos = [
+    { src: itachi, alt: 'Itachi, de Naruto' },
+    { src: amor, alt: 'Selfie com o meu amor' },
+    { src: harry, alt: 'Harry, meu gato' },
+]
 
 export const CarouselPhotos = () => {
-    const [counterCarousel, setCounterCarousel] = useState(0);
+    const [index, setIndex] = useState(0)
+    const reducedMotion = useReducedMotion()
 
     useEffect(() => {
-        const interval = setInterval(() => {
-            setCounterCarousel((prev) => (prev + 1) % 3);
-        }, 3100);
-
+        if (reducedMotion) return
+        const interval = setInterval(() => setIndex((i) => (i + 1) % photos.length), 3100)
         return () => clearInterval(interval)
-    }, [counterCarousel])
-
-    const imageCarousel = () => {
-        switch (counterCarousel) {
-            case 0:
-                return itachi
-            case 1:
-                return amor
-            case 2:
-                return harry
-            default:
-                setCounterCarousel(0)
-                return itachi
-        }
-    }
+    }, [reducedMotion])
 
     return (
-            <div className="flex flex-col items-center justify-center min-h-[230px]">
-                <RoundedImage src={imageCarousel()} />
-                <CarouselIcons counterCarousel={counterCarousel} />
-            </div>
+        <div className="flex flex-col items-center">
+            <RoundedImage src={photos[index].src} alt={photos[index].alt} />
+            <CarouselIcons active={index} onSelect={setIndex} />
+        </div>
     )
 }
-

@@ -1,39 +1,46 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react'
 
-export const RoundedImage = ({ src }: { src: string }) => {
-  const [flipping, setFlipping] = useState(false);
-  const [currentSrc, setCurrentSrc] = useState(src);
+/** Foto redonda que vira em 3D ao trocar de imagem. */
+export const RoundedImage = ({ src, alt }: { src: string; alt: string }) => {
+    const [flipping, setFlipping] = useState(false)
+    const [current, setCurrent] = useState({ src, alt })
 
-  useEffect(() => {
-    if (src !== currentSrc) {
-      setFlipping(true);
+    useEffect(() => {
+        if (src === current.src) return
 
-      const img = new Image();
-      img.src = src;
+        let timer: ReturnType<typeof setTimeout>
+        setFlipping(true)
 
-      img.onload = () => {
-        setTimeout(() => {
-          setCurrentSrc(src);
-          setFlipping(false);
-        }, 200);
-      };
-    }
-  }, [src, currentSrc]);
+        const img = new Image()
+        img.src = src
+        img.onload = () => {
+            timer = setTimeout(() => {
+                setCurrent({ src, alt })
+                setFlipping(false)
+            }, 200)
+        }
 
-  return (
-    <div className="relative w-36 h-36 perspective">
-      <div
-        className={`relative w-full h-full border-2 border-white rounded-full transition-transform duration-400 ease-[cubic-bezier(0.45,0,0.2,1)] transform-style-preserve-3d ${
-          flipping ? 'rotate-y-90' : 'rotate-y-0'
-        }`}
-      >
-        <div className="absolute inset-0 rounded-full bg-main-purple blur-lg scale-90 z-0" />
+        return () => {
+            img.onload = null
+            clearTimeout(timer)
+        }
+    }, [src, alt, current.src])
 
-        <div
-          className="absolute inset-0 rounded-full bg-center bg-cover z-10"
-          style={{ backgroundImage: `url(${currentSrc})` }}
-        />
-      </div>
-    </div>
-  );
-};
+    return (
+        <div className="perspective relative size-56 md:size-64">
+            <div
+                className={`transform-style-preserve-3d relative size-full rounded-full transition-transform duration-400 ease-[cubic-bezier(0.45,0,0.2,1)] ${
+                    flipping ? '[transform:rotateY(90deg)]' : '[transform:rotateY(0deg)]'
+                }`}
+            >
+                <div aria-hidden className="absolute inset-0 scale-90 rounded-full bg-violet blur-2xl" />
+                <img
+                    src={current.src}
+                    alt={current.alt}
+                    loading="lazy"
+                    className="relative size-full rounded-full object-cover ring-2 ring-violet/70 ring-offset-4 ring-offset-ink"
+                />
+            </div>
+        </div>
+    )
+}

@@ -1,146 +1,115 @@
 @import "tailwindcss";
-@import "@fontsource/poppins/400.css";
-@import "@fontsource/poppins/600.css";
-@import "@fontsource/poppins/700.css";
+@import "@fontsource-variable/bricolage-grotesque/standard.css";
 
 @theme {
-    --color-background: #1D1D1D;
-    --color-black-contrast: #232323;
-    --color-secondary-purple: #9251FF;
-    --color-main-purple: #6e39d2;
-    --default-font-family: 'Poppins', sans-serif;
-    --drop-shadow-social-media: 2px 2px 2px rgba(146, 81, 255, 0.30);
-    --drop-shadow-social-media-hover: 0 0 6px rgba(146, 81, 255, 0.5);
+    --font-sans: 'Bricolage Grotesque Variable', ui-sans-serif, system-ui, sans-serif;
 
-    --animate-slide-in-left: slideInLeft 0.3s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-    --animate-slide-out-right: slideOutRight 0.3s ease-out forwards; 
+    /* Paleta: fundo berinjela profundo, superfícies em roxo escuro, violeta como ação */
+    --color-ink: #150f1f;
+    --color-surface: #1e1630;
+    --color-surface-2: #281e3f;
+    --color-line: #3a2c56;
+    --color-violet: #9251ff;
+    --color-violet-deep: #6e39d2;
+    --color-lilac: #cdb6ff;
+    --color-text: #f1ecfa;
+    --color-muted: #a898c4;
+    --color-live: #5eead4;
 
+    --ease-out-expo: cubic-bezier(0.22, 1, 0.36, 1);
 
- @keyframes slideInLeft {
-        0% {
-            transform: translateX(100%);
-            opacity: 0;
-        }
-        100% {
-            transform: translateX(0);
-            opacity: 1;
-        }
+    --animate-rise: rise 1s var(--ease-out-expo) both;
+    --animate-fade-up: fade-up 0.9s var(--ease-out-expo) both;
+    --animate-orbit: orbit 60s linear infinite;
+    --animate-orbit-reverse: orbit 60s linear infinite reverse;
+    --animate-aurora: aurora 16s ease-in-out infinite alternate;
+    --animate-aurora-slow: aurora 22s ease-in-out infinite alternate-reverse;
+    --animate-toast-in: toast-in 0.35s var(--ease-out-expo) both;
+    --animate-caret: caret 1s steps(1) infinite;
+
+    @keyframes rise {
+        from { transform: translateY(110%); }
+        to { transform: translateY(0); }
     }
 
-    @keyframes slideOutRight {
-        0% {
-            transform: translateX(0);
-            opacity: 1;
-        }
-        100% {
-            transform: translateX(100%);
-            opacity: 0;
-        }
+    @keyframes fade-up {
+        from { opacity: 0; transform: translateY(14px); }
+        to { opacity: 1; transform: none; }
+    }
+
+    @keyframes orbit {
+        to { transform: rotate(360deg); }
+    }
+
+    @keyframes aurora {
+        0% { transform: translate3d(-10%, -6%, 0) scale(1); }
+        100% { transform: translate3d(10%, 8%, 0) scale(1.2); }
+    }
+
+    @keyframes toast-in {
+        from { opacity: 0; transform: translateY(12px) scale(0.96); }
+        to { opacity: 1; transform: none; }
+    }
+
+    @keyframes caret {
+        50% { opacity: 0; }
     }
 }
 
+@layer base {
+    html {
+        color-scheme: dark;
+        scroll-behavior: smooth;
+        background-color: var(--color-ink);
+    }
+
+    body {
+        min-width: 320px;
+        background-color: var(--color-ink);
+        color: var(--color-text);
+        font-family: var(--font-sans);
+        font-optical-sizing: auto;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
+        overflow-x: hidden;
+    }
+
+    ::selection {
+        background-color: var(--color-violet);
+        color: white;
+    }
+
+    :focus-visible {
+        outline: 2px solid var(--color-lilac);
+        outline-offset: 3px;
+        border-radius: 6px;
+    }
+}
+
+/* Flip 3D das fotos em "Além do código" */
 .perspective {
-  perspective: 800px;
-}
-
-.rotate-y-0 {
-  transform: rotateY(0deg);
-}
-
-.rotate-y-90 {
-  transform: rotateY(90deg);
+    perspective: 800px;
 }
 
 .transform-style-preserve-3d {
-  transform-style: preserve-3d;
+    transform-style: preserve-3d;
 }
 
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-.no-scrollbar {
-  -ms-overflow-style: none; /* IE 10+ */
-  scrollbar-width: none; /* Firefox */
-}
-
-
-:root {
-    font-family: var(--default-font-family);
-    line-height: 1.5;
-    font-weight: 400;
-    width: 100vw;
-    max-width: 100vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color-scheme: light dark;
-    color: white;
-    background-color: var(--color-background);
-    box-sizing: border-box;
-    overflow-x: hidden;
-
-    font-synthesis: none;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-    font-weight: 500;
-    color: #646cff;
-    text-decoration: inherit;
-}
-
-a:hover {
-    color: #535bf2;
-}
-
-body {
-    margin: 0;
-    display: flex;
-    place-items: center;
-    min-width: 320px;
-    min-height: 100vh;
-}
-
-h1 {
-    font-size: 3.2em;
-    line-height: 1.1;
-}
-
-button {
-    border-radius: 8px;
-    border: 1px solid transparent;
-    padding: 0.6em 1.2em;
-    font-size: 1em;
-    font-weight: 500;
-    font-family: inherit;
-    background-color: #1a1a1a;
-    cursor: pointer;
-    transition: border-color 0.25s;
-}
-
-button:hover {
-    border-color: #646cff;
-}
-
-button:focus,
-button:focus-visible {
-    outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-    :root {
-        color: #213547;
-        background-color: #ffffff;
+/* Quem pede menos movimento no sistema vê tudo já no estado final */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
     }
 
-    a:hover {
-        color: #747bff;
-    }
-
-    button {
-        background-color: #f9f9f9;
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-delay: 0s !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        transition-delay: 0s !important;
     }
 }
