@@ -26,6 +26,8 @@ export const Stack = () => (
                                         <img
                                             src={item.logo}
                                             alt=""
+                                            width={20}
+                                            height={20}
                                             loading="lazy"
                                             className={`size-5 object-contain ${item.mono ? 'brightness-0 invert' : ''}`}
                                         />

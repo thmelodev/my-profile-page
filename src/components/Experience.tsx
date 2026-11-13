@@ -87,7 +87,14 @@ export const Experience = () => {
                                                 job.logoBg === 'white' ? 'bg-white p-0.5' : 'bg-violet p-1.5'
                                             }`}
                                         >
-                                            <img src={job.logo} alt="" className="max-h-full" />
+                                            <img
+                                                src={job.logo}
+                                                alt=""
+                                                width={36}
+                                                height={36}
+                                                loading="lazy"
+                                                className="size-full object-contain"
+                                            />
                                         </span>
                                         <div className="leading-tight">
                                             <p className="font-semibold text-lilac">{job.company}</p>

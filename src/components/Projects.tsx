@@ -88,8 +88,8 @@ const BrowserFrame = ({ project }: { project: Project }) => (
                 <img
                     src={project.image}
                     alt=""
-                    width={1280}
-                    height={800}
+                    width={1000}
+                    height={625}
                     loading="lazy"
                     className="aspect-[16/10] w-full object-cover object-top"
                 />

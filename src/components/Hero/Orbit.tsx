@@ -20,8 +20,8 @@ export const Orbit = () => {
             <img
                 src={photo}
                 alt={`Foto de ${profile.name}`}
-                width={800}
-                height={800}
+                width={480}
+                height={480}
                 fetchPriority="high"
                 className="absolute inset-[25%] size-1/2 rounded-full object-cover ring-2 ring-violet/70 ring-offset-4 ring-offset-ink"
             />
@@ -40,7 +40,13 @@ export const Orbit = () => {
                         <div key={logo.name} className="absolute top-1/2 left-1/2" style={style}>
                             <div className="group/logo relative animate-orbit-reverse group-hover:[animation-play-state:paused]">
                                 <div className="grid size-12 place-items-center rounded-2xl border border-line bg-surface/90 p-2.5 shadow-lg shadow-black/30 backdrop-blur transition duration-300 group-hover/logo:scale-110 group-hover/logo:border-violet sm:size-14 sm:p-3">
-                                    <img src={logo.src} alt="" className="max-h-full max-w-full object-contain" />
+                                    <img
+                                        src={logo.src}
+                                        alt=""
+                                        width={32}
+                                        height={32}
+                                        className="size-full object-contain"
+                                    />
                                 </div>
                                 <span className="pointer-events-none absolute top-full left-1/2 mt-2 -translate-x-1/2 rounded-md bg-surface-2 px-2 py-0.5 text-xs whitespace-nowrap text-text opacity-0 transition group-hover/logo:opacity-100">
                                     {logo.name}

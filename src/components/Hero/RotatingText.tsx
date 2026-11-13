@@ -28,7 +28,9 @@ export const RotatingText = ({ prefix, phrases, startDelay = 1100, className = '
     const reducedMotion = useReducedMotion()
     const [started, setStarted] = useState(false)
     const [index, setIndex] = useState(0)
-    const [length, setLength] = useState(0)
+    // A primeira frase já nasce completa: é o maior texto da tela (a LCP), e se ela fosse
+    // digitada letra a letra o navegador só consideraria a página "pronta" ao fim da digitação.
+    const [length, setLength] = useState(phrases[0].length)
     const [deleting, setDeleting] = useState(false)
 
     useEffect(() => {

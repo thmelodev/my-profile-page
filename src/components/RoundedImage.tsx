@@ -37,6 +37,8 @@ export const RoundedImage = ({ src, alt }: { src: string; alt: string }) => {
                 <img
                     src={current.src}
                     alt={current.alt}
+                    width={512}
+                    height={512}
                     loading="lazy"
                     className="relative size-full rounded-full object-cover ring-2 ring-violet/70 ring-offset-4 ring-offset-ink"
                 />
