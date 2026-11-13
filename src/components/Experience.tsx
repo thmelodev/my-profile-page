@@ -32,7 +32,7 @@ export const Experience = () => {
             title="Experiência"
             intro={
                 <>
-                    Do estágio ao nível pleno em quatro anos: comecei no programa QQ-Tech da{' '}
+                    Do estágio ao nível pleno em quatro anos: comecei no programa QQ-Tech das{' '}
                     <span className="whitespace-nowrap">Lojas Quero-Quero</span> e hoje conduzo projetos de ponta a ponta
                     na Megawork Consultoria.
                 </>

@@ -107,7 +107,7 @@ export const jobs: Job[] = [
         logoBg: 'violet',
         start: 'out 2023',
         end: 'jul 2026',
-        location: 'Remoto, sede em Cachoeirinha (RS)',
+        location: 'Remoto',
         highlights: [
             'Desenvolvi microsserviços do e-commerce integrados à VTEX, incluindo um integrador de preços em Go.',
             'Construí aplicações em NestJS e Go para o ecossistema de e-commerce.',

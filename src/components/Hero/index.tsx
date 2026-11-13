@@ -54,7 +54,7 @@ export const Hero = ({ onCopyEmail }: { onCopyEmail: () => void }) => (
                 <p className="mt-5 max-w-[54ch] animate-fade-up text-muted md:text-lg" style={delay(560)}>
                     Há mais de quatro anos construo sistemas que rodam em produção. Hoje conduzo de ponta a ponta a
                     aplicação que vai substituir o Microsoft Project Web App, com React, NestJS, SQL Server e .NET. Antes,
-                    na <span className="whitespace-nowrap">Lojas Quero-Quero</span>, desenvolvi microsserviços do
+                    nas <span className="whitespace-nowrap">Lojas Quero-Quero</span>, desenvolvi microsserviços do
                     e-commerce integrados à VTEX.
                 </p>
 
