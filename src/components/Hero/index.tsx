@@ -44,11 +44,12 @@ export const Hero = ({ onCopyEmail }: { onCopyEmail: () => void }) => (
                     ))}
                 </h1>
 
-                <p className="mt-6 min-h-[3.2em] animate-fade-up text-xl leading-snug md:text-2xl" style={delay(450)}>
-                    {profile.role} na <span className="whitespace-nowrap">Megawork Consultoria.</span>
-                    <br />
-                    Construo <RotatingText phrases={heroPhrases} />
-                </p>
+                <div className="mt-6 animate-fade-up text-xl leading-snug md:text-2xl" style={delay(450)}>
+                    <p>
+                        {profile.role} na <span className="whitespace-nowrap">Megawork Consultoria.</span>
+                    </p>
+                    <RotatingText prefix="Construo" phrases={heroPhrases} />
+                </div>
 
                 <p className="mt-5 max-w-[54ch] animate-fade-up text-muted md:text-lg" style={delay(560)}>
                     Há mais de quatro anos construo sistemas que rodam em produção. Hoje conduzo de ponta a ponta a

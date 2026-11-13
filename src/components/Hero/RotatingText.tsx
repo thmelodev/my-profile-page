@@ -2,13 +2,29 @@ import { useEffect, useState } from 'react'
 import { useReducedMotion } from '../../hooks/useReducedMotion'
 
 type RotatingTextProps = {
+    /** Texto fixo antes da frase digitada, ex.: "Construo". */
+    prefix: string
     phrases: string[]
     /** Espera antes de começar a digitar, para não competir com a entrada do hero. */
     startDelay?: number
+    className?: string
 }
 
-/** Digita e apaga cada frase em sequência. Leitores de tela recebem a lista completa. */
-export const RotatingText = ({ phrases, startDelay = 1100 }: RotatingTextProps) => {
+const Caret = ({ visible = true }: { visible?: boolean }) => (
+    <span
+        className={`ml-0.5 inline-block h-[0.95em] w-[3px] translate-y-[0.12em] rounded-full bg-violet ${
+            visible ? 'animate-caret' : ''
+        }`}
+    />
+)
+
+/**
+ * Digita e apaga cada frase em sequência, sem mexer no layout: todas as frases ficam
+ * empilhadas, invisíveis, na mesma célula do grid, então a altura reservada é sempre a da
+ * frase mais longa e nada abaixo dela pula enquanto o texto muda.
+ * Leitores de tela recebem a lista completa de uma vez.
+ */
+export const RotatingText = ({ prefix, phrases, startDelay = 1100, className = '' }: RotatingTextProps) => {
     const reducedMotion = useReducedMotion()
     const [started, setStarted] = useState(false)
     const [index, setIndex] = useState(0)
@@ -42,12 +58,23 @@ export const RotatingText = ({ phrases, startDelay = 1100 }: RotatingTextProps) 
     const visible = reducedMotion ? phrases[0] : phrases[index].slice(0, length)
 
     return (
-        <>
-            <span className="sr-only">{phrases.join(', ')}</span>
-            <span aria-hidden className="text-lilac">
-                {visible}
-                <span className="ml-0.5 inline-block h-[0.95em] w-[3px] translate-y-[0.12em] animate-caret rounded-full bg-violet" />
+        <p className={className}>
+            <span className="sr-only">
+                {prefix} {phrases.join(', ')}
             </span>
-        </>
+            <span aria-hidden className="grid">
+                {/* Reservam a altura da frase mais longa */}
+                {phrases.map((phrase) => (
+                    <span key={phrase} className="invisible col-start-1 row-start-1">
+                        {prefix} {phrase}
+                        <Caret visible={false} />
+                    </span>
+                ))}
+                <span className="col-start-1 row-start-1">
+                    {prefix} <span className="text-lilac">{visible}</span>
+                    <Caret />
+                </span>
+            </span>
+        </p>
     )
 }
