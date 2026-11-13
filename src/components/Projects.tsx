@@ -5,7 +5,7 @@ import { buttonStyles } from './styles'
 import { Chip, Reveal, Section } from './ui'
 
 export const Projects = () => (
-    <Section id="projetos" title="Projetos" intro="Um projeto entregue de ponta a ponta, do código ao deploy.">
+    <Section id="projetos" title="Projetos" intro="Sites feitos de ponta a ponta, do código ao deploy.">
         <div className="grid gap-10">
             {projects.map((project) => (
                 <ProjectCard key={project.name} project={project} />
@@ -36,6 +36,11 @@ const ProjectCard = ({ project }: { project: Project }) => (
             <BrowserFrame project={project} />
 
             <div>
+                {project.demo && (
+                    <p className="mb-4">
+                        <Chip>Site de demonstração</Chip>
+                    </p>
+                )}
                 <h3 className="text-3xl font-bold tracking-tight [font-stretch:85%] md:text-4xl">{project.name}</h3>
                 <p className="mt-4 max-w-[58ch] text-lg text-text/90">{project.summary}</p>
 

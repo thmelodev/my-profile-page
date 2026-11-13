@@ -13,6 +13,7 @@ import typescript from '../assets/typescript.webp'
 import queroQuero from '../assets/quero-quero.webp'
 import megawork from '../assets/megawork.webp'
 import superAcougueWilde from '../assets/projects/super-acougue-wilde.webp'
+import cleanPetStore from '../assets/projects/clean-pet-store.webp'
 // Ícones da stack: devicon (MIT), https://devicon.dev
 import astro from '../assets/stack/astro.svg'
 import datadog from '../assets/stack/datadog.svg'
@@ -229,6 +230,8 @@ export const stack: { group: string; items: StackItem[] }[] = [
 
 export type Project = {
     name: string
+    /** Site feito por conta própria, sem cliente: mostra o selo "Site de demonstração". */
+    demo?: boolean
     url: string
     displayUrl: string
     summary: string
@@ -254,5 +257,22 @@ export const projects: Project[] = [
         ],
         tech: ['Astro', 'Tailwind CSS', 'GSAP', 'Vercel', 'GitHub Actions'],
         image: superAcougueWilde,
+    },
+    {
+        name: 'Clean Pet Store',
+        demo: true,
+        url: 'https://clean-petshop.vercel.app/',
+        displayUrl: 'clean-petshop.vercel.app',
+        summary:
+            'Site de demonstração para um pet shop de banho e tosa em Vila Velha (ES), feito para apresentar à loja. Mostra os serviços com fotos dos pets, os produtos, as avaliações do Google, se está aberto agora e como chegar, e leva o agendamento e os pedidos para o WhatsApp.',
+        decisions: [
+            'HTML estático gerado no build com Astro, com todo o CSS inline no <head>: nenhum arquivo bloqueia a primeira pintura.',
+            'Nenhum framework no navegador: um script pequeno cuida das animações de rolagem, do status "Aberto agora" no fuso de Vila Velha e do botão fixo do WhatsApp no celular.',
+            'Fotos geradas no build em vários tamanhos WebP, e o celular baixa só o tamanho de que precisa.',
+            'Efeitos presos à rolagem com animation-timeline em CSS, com alternativa para navegadores sem suporte e tudo desligado para quem pediu menos movimento.',
+            'Dados estruturados de PetStore e FAQPage para o Google entender a loja.',
+        ],
+        tech: ['Astro', 'Tailwind CSS', 'TypeScript', 'Vercel'],
+        image: cleanPetStore,
     },
 ]
